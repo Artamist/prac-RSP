@@ -24,8 +24,9 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.App-link,
+a {
+  color: #00acc1;
 }
 
 @keyframes App-logo-spin {
@@ -35,4 +36,33 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.task-icons {
+  background: #37474f;
+  border-radius: 10%;
+  margin: auto;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.view-task,
+.edit-task,
+.delete-task,
+.complete-task {
+  color: #00acc1;
+  border-radius: 10px;
+  padding: 7px;
+  border-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+.task-comp-style {
+  background: #37474f;
+  border-radius: 10%;
+  margin: auto;
+  height: 50px;
 }

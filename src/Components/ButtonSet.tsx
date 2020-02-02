@@ -1,7 +1,7 @@
 /** @jsx createElement */
 
 import { createElement, FC } from 'react'
-import { Button, Roles } from '../../button'
+import { Button, Roles } from '../button'
 
 function renderButtonList(buttons: Button[], currentRole: Roles) {
   return buttons.map((button: Button) => {
