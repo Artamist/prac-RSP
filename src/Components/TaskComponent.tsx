@@ -33,6 +33,28 @@ function renderTaskList(task: Task[], currentRole: Roles) {
             </li>
           </ul>
         </div>
+        <div className='task-list-style'>
+          <ul>
+            <li>
+              <a href={url}>{label}</a>
+              <TaskButtonsComponent
+                taskButtonsData={taskButtonsData}
+                role={'user'}
+              />
+            </li>
+          </ul>
+        </div>
+        <div className='task-list-style'>
+          <ul>
+            <li>
+              <a href={url}>{label}</a>
+              <TaskButtonsComponent
+                taskButtonsData={taskButtonsData}
+                role={'user'}
+              />
+            </li>
+          </ul>
+        </div>
       </div>
     )
   })

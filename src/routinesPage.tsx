@@ -36,14 +36,10 @@ const RoutinesPage: React.FC = () => {
           <header className='whats-next-header'>What's Next Tasks</header>
           {/* What's Next Tasks */}
           <TaskComponent taskData={taskData} role={'user'} />
-          <TaskComponent taskData={taskData} role={'user'} />
-          <TaskComponent taskData={taskData} role={'user'} />
         </div>
         <div className='task-list-box'>
-          <header className='whats-next-header'>What's Next Tasks</header>
+          <header className='tasks-header'>Tasks</header>
           {/* Tasks */}
-          <TaskComponent taskData={taskData} role={'user'} />
-          <TaskComponent taskData={taskData} role={'user'} />
           <TaskComponent taskData={taskData} role={'user'} />
         </div>
       </div>

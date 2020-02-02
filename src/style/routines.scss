@@ -4,9 +4,9 @@
 }
 
 .routines-banner {
+  background: #37474f;
   display: flex;
   flex-direction: column;
-  background: #37474f;
   align-items: center;
   height: 100px;
   width: 100%;
@@ -18,24 +18,28 @@
   padding: 40px;
   width: 80%;
 }
+
+.task-button-style {
+  background: #37474f;
+  border-style: none;
+}
 .task-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 50px;
-  width: 40%;
-
-  .task-list-box {
-    background: #37474f;
-    padding: 20px 50px 20px 20px;
-    border-radius: 10%;
-    margin: 30px 20px 20px 1220px;
-  }
 }
-.task-list-style {
-  background: #37474f;
-}
-.task-button-style {
+.task-list-box {
   background: #37474f;
   border-style: none;
+  border-radius: 10%;
+  width: 35%;
+  margin-top: 20px;
+}
+.whats-next-header,
+.tasks-header {
+  padding: 20px;
+}
+
+ul {
+  list-style-type: none;
 }
