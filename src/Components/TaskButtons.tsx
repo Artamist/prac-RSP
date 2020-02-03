@@ -15,24 +15,26 @@ function renderTaskButtonsList(taskButtons: TaskButtons[], currentRole: Roles) {
       /*<button onClick={handler} className={`button micro small ${color}`}>
         {label}
       </button> */
-      <div className='task-icons'>
-        <button onClick={handler} className={`view-task ${color}`}>
-          <label className={`view-task-label ${color}`}>
-            <a href='https://www.google.com/'>View {/*label*/}</a>
-          </label>
-        </button>
-        <button onClick={handler} className={`edit-task ${color}`}>
-          <label className='edit-task-label'>Edit {/*label*/}</label>
-        </button>
-        <button onClick={handler} className={`delete-task ${color}`}>
-          <label className='delete-task-label'>Delete {/*label*/}</label>
-        </button>
-        <button onClick={handler} className={`complete-task ${color}`}>
-          <label className='complete-task-label'>
-            {/* checkmark */}
-            {/*label*/}
-          </label>
-        </button>
+      <div className='task-icons-wrapper'>
+        <div className='task-icons'>
+          <button onClick={handler} className={`view-task ${color}`}>
+            <span className={`view-task-label ${color}`}>
+              <a href='https://www.google.com/'>View {/*label*/}</a>
+            </span>
+          </button>
+          <button onClick={handler} className={`edit-task ${color}`}>
+            <span className='edit-task-label'>Edit {/*label*/}</span>
+          </button>
+          <button onClick={handler} className={`delete-task ${color}`}>
+            <span className='delete-task-label'>Delete {/*label*/}</span>
+          </button>
+          <button onClick={handler} className={`complete-task ${color}`}>
+            <span className='complete-task-label'>
+              {/* checkmark */}
+              {/*label*/}
+            </span>
+          </button>
+        </div>
       </div>
     )
   })

@@ -4,6 +4,7 @@ import { Task, Roles } from '../task'
 
 import TaskButtonsComponent from './TaskButtons'
 import { TaskButtons } from '../taskButtons'
+import { CustomTasks } from '../customTasks'
 
 const taskButtonsData: TaskButtons[] = [
   {
@@ -14,15 +15,16 @@ const taskButtonsData: TaskButtons[] = [
   }
 ]
 
-function renderTaskList(task: Task[], currentRole: Roles) {
-  return task.map((task: Task) => {
-    const { url, label, roles, completed } = task
+function renderCustomTasksList(customTasks: CustomTasks[], currentRole: Roles) {
+  return customTasks.map((customTasks: CustomTasks) => {
+    const { url, label, roles, completed } = customTasks
 
     if (!roles.includes(currentRole)) return
 
     return (
-      <div className='task-comp-style'>
-        <div className='task-list-style'>
+      <div className='custom-task-comp-style'>
+        <header className='custom-task-header'>Custom Tasks List</header>
+        <div className='custom-task-list-style'>
           <ul>
             <li>
               <a href={url}>{label}</a>
@@ -57,20 +59,27 @@ function renderTaskList(task: Task[], currentRole: Roles) {
             </li>
           </ul>
         </div>
+        <button className={'create-new-task'}>
+          <span className='create-new-task-label'>Create New Task</span>
+        </button>
       </div>
     )
   })
 }
 
 interface Props {
-  taskData: Task[]
+  customTasksData: CustomTasks[]
   role: Roles
 }
 
-const TaskComponent: FC<Props> = ({ taskData, role }) => {
-  return <div className='tasklist'>{renderTaskList(taskData, role)}</div>
+const CustomTasksComponent: FC<Props> = ({ customTasksData, role }) => {
+  return (
+    <div className='tasklist'>
+      {renderCustomTasksList(customTasksData, role)}
+    </div>
+  )
 }
 
-export default TaskComponent
+export default CustomTasksComponent
 
 // add onClick to all buttons
