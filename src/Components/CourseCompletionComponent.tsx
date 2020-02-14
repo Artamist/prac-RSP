@@ -30,14 +30,19 @@ function renderCourseCompletionSection(
       <div className='completion-style'>
         <header className='completion-header'>Course Completion</header>
         {/* Ask about inserting chart add on for circle graph INSERT CIRCLE GRAPH HERE */}
-        <div className='completion-button-style'>
-          <ButtonSetComponent buttonData={buttonData} role={'user'} />
-        </div>
-        <div className='completion-button-style'>
-          <ButtonSetComponent buttonData={buttonData} role={'user'} />
-        </div>
-        <div className='completion-button-style'>
-          <ButtonSetComponent buttonData={buttonData} role={'user'} />
+        <div className='completion-button-box'>
+          <header className='percent-complete-header'>
+            {/* Insert percentage props*/}90% Complete
+          </header>
+          <div className='completion-button-style'>
+            <ButtonSetComponent buttonData={buttonData} role={'user'} />
+          </div>
+          <div className='completion-button-style'>
+            <ButtonSetComponent buttonData={buttonData} role={'user'} />
+          </div>
+          <div className='completion-button-style'>
+            <ButtonSetComponent buttonData={buttonData} role={'user'} />
+          </div>
         </div>
       </div>
     )

@@ -1,7 +1,9 @@
 /** @jsx createElement */
 
 import { createElement } from 'react'
+
 import './style/routines.scss'
+
 import CarouselBanner from './Components/CarouselBanner'
 
 import TaskComponent from './Components/TaskComponent'
@@ -9,6 +11,9 @@ import { Task } from './task'
 
 import CourseCompletionComponent from './Components/CourseCompletionComponent'
 import { CourseCompletion } from './courseCompletion'
+
+import BreakdownTasksComponent from './Components/BreakdownTasks'
+import { BreakdownTasks } from './breakdownTasks'
 
 // import nav
 // import search bar
@@ -27,7 +32,16 @@ const courseCompletionData: CourseCompletion[] = [
   {
     label: ['video'],
     roles: ['user', 'admin', 'teacher'],
-    completed: true
+    completed: false
+  }
+]
+
+const breakdownTasksData: BreakdownTasks[] = [
+  {
+    url: 'www/google.com',
+    label: ['hello'],
+    roles: ['admin'],
+    completed: false
   }
 ]
 
@@ -63,6 +77,10 @@ const ProgressPage: React.FC = () => {
           role={'user'}
         />
       </div>
+      <BreakdownTasksComponent
+        breakdownTasksData={breakdownTasksData}
+        role={'admin'}
+      />
     </div>
   )
 }

@@ -5,19 +5,50 @@
 .course-completion-box {
   background: #37474f;
   border-radius: 20px;
-  margin-top: 20px;
-  margin-right: 20px;
-  margin-bottom: 20px;
-  width: 100%;
+  margin: 20px 20px 20px 150px;
+  width: 70%;
 }
 .completion-style {
+  display: flex;
+  flex-direction: column;
   padding: 10px;
+
   .completion-header {
+    display: flex;
+    flex-direction: row;
     color: white;
-    padding: 10px;
+    padding: 20px;
+    margin-left: 80px;
   }
 }
-.button-set {
-  padding: 5px;
+.completion-button-box {
+  margin-bottom: 100px;
+}
+.percent-complete-header {
+  color: white;
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 20px;
+  margin-right: 80px;
+}
+.button-set,
+.button-style {
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 10px;
+  margin-right: 120px;
   border-radius: 10px;
+}
+.breakdown-style {
+  background: #37474f;
+  border-radius: 10px;
+  margin-bottom: 100px;
+}
+.breakdown-tasks-header {
+  color: white;
+  padding: 20px;
+}
+.breakdown-button-style {
+  display: flex;
+  flex-direction: column;
 }
