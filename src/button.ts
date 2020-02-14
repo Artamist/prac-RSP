@@ -1,9 +1,11 @@
-export type Roles = 'guest' | 'user' | 'instructor' | 'admin'
+export type Roles = 'guest' | 'user' | 'teacher' | 'admin'
 
 export type Colors = 'primary' | 'secondary' | 'red' | 'yellow' | 'green'
 
+export type Labels = 'video' | 'quizes' | 'blogs'
+
 export interface Button {
-  label: string
+  label: Labels[]
   handler: () => void
   roles: Roles[]
   color: Colors

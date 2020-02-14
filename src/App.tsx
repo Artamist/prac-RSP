@@ -13,7 +13,7 @@ import RoutinesPage from './routinesPage'
 
 const buttonData: Button[] = [
   {
-    label: 'Button1',
+    label: ['video', 'quizes', 'blogs'],
     handler: () => console.log('Hello World'),
     roles: ['user'],
     color: 'primary'
