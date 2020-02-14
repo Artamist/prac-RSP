@@ -16,7 +16,7 @@
 .page-info-box {
   background: #37474f;
   border-radius: 10%;
-  height: 600px;
+  height: 630px;
   margin-top: 20px;
   margin-right: 20px;
   width: 60%;
@@ -31,9 +31,8 @@
   background: #37474f;
   border-style: none;
   border-radius: 10%;
-  margin-bottom: 50px;
-  width: 500px;
-  align-items: center;
+  margin-bottom: 100px;
+  width: 100%;
 }
 
 .task-container {
@@ -46,8 +45,8 @@
     border-style: none;
     border-radius: 10%;
     margin-top: 20px;
-    margin-bottom: 20px;
-    padding: 10px;
+    margin-bottom: 15px;
+    padding: 5px;
   }
   .task-icons-wrapper {
     margin-right: 20px;
@@ -57,9 +56,9 @@
   }
 }
 .whats-next-header,
-.tasks-header,
-.custom-task-header {
-  padding: 10px;
+.tasks-header {
+  padding: 5px;
+  color: white;
 }
 
 .line-style {
@@ -69,4 +68,17 @@
 
 ul {
   list-style-type: none;
+}
+.custom-task-header {
+  padding: 10px;
+  color: white;
+}
+.custom-tasks-box {
+  margin-top: 20px;
+}
+.create-new-task-button {
+  color: #00acc1;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  padding: 7px;
 }

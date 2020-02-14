@@ -1,0 +1,23 @@
+.progress-page-layout {
+  display: flex;
+  flex-direction: row;
+}
+.course-completion-box {
+  background: #37474f;
+  border-radius: 20px;
+  margin-top: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+.completion-style {
+  padding: 10px;
+  .completion-header {
+    color: white;
+    padding: 10px;
+  }
+}
+.button-set {
+  padding: 5px;
+  border-radius: 10px;
+}

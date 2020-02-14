@@ -7,24 +7,14 @@ import CarouselBanner from './Components/CarouselBanner'
 import TaskComponent from './Components/TaskComponent'
 import { Task } from './task'
 
-import CustomTasksComponent from './Components/CustomTasksComponent'
-import { CustomTasks } from './customTasks'
-
 import CourseCompletionComponent from './Components/CourseCompletionComponent'
 import { CourseCompletion } from './courseCompletion'
 
 // import nav
 // import search bar
+// hard wired components need to be seperated /header /TaskButtons
 
 const taskData: Task[] = [
-  {
-    url: 'http://www.google.com/',
-    label: ['Finish Week 1 Intro'],
-    roles: ['user'],
-    completed: false
-  }
-]
-const customTasksData: CustomTasks[] = [
   {
     url: 'http://www.google.com/',
     label: ['Finish Week 1 Intro'],
@@ -41,11 +31,11 @@ const courseCompletionData: CourseCompletion[] = [
   }
 ]
 
-const RoutinesPage: React.FC = () => {
+const ProgressPage: React.FC = () => {
   return (
-    <div className='routines-page'>
+    <div className='progress-page'>
       <CarouselBanner />
-      <div className='routines-page-layout'>
+      <div className='progress-page-layout'>
         <div className='page-info-box'>
           <p className='page-info'>
             This page displays your basic task info! Create and manage tasks
@@ -67,11 +57,13 @@ const RoutinesPage: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className='custom-tasks-box'>
-        <CustomTasksComponent customTasksData={customTasksData} role={'user'} />
-        {/* Edit Custom Tasks */}
+      <div className='course-completion-box'>
+        <CourseCompletionComponent
+          courseCompletionData={courseCompletionData}
+          role={'user'}
+        />
       </div>
     </div>
   )
 }
-export default RoutinesPage
+export default ProgressPage

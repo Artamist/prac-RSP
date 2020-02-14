@@ -1,6 +1,8 @@
 import React from 'react'
 import { FC } from 'react'
 
+import '../style/progress.scss'
+
 import ButtonSetComponent from './ButtonSet'
 import { Button } from '../button'
 
@@ -8,7 +10,7 @@ import { CourseCompletion, Roles } from '../courseCompletion'
 
 const buttonData: Button[] = [
   {
-    label: ['video', 'quizes', 'blogs'],
+    label: 'quizes',
     handler: () => console.log('Hello World'),
     roles: ['user', 'admin', 'teacher'],
     color: 'green'
@@ -25,16 +27,16 @@ function renderCourseCompletionSection(
     if (!roles.includes(currentRole)) return
 
     return (
-      <div>
-        <header>Course Completion</header>
+      <div className='completion-style'>
+        <header className='completion-header'>Course Completion</header>
         {/* Ask about inserting chart add on for circle graph INSERT CIRCLE GRAPH HERE */}
-        <div>
+        <div className='completion-button-style'>
           <ButtonSetComponent buttonData={buttonData} role={'user'} />
         </div>
-        <div>
+        <div className='completion-button-style'>
           <ButtonSetComponent buttonData={buttonData} role={'user'} />
         </div>
-        <div>
+        <div className='completion-button-style'>
           <ButtonSetComponent buttonData={buttonData} role={'user'} />
         </div>
       </div>
