@@ -1,21 +1,27 @@
 import React from 'react'
 
-const RoutineBannerComponent = () => {
-  return (
-    <header className='routines-banner'>
-      <img
-        src={'#' /* video source */}
-        className='routine-media-banner'
-        alt='routine-media'
-      />
-      <div className='video-info'>
-        {/* Insert Video heart/comment icons*/}
+//import commentIcon from '../Images/commentIcon'
+//import heartIcon from '../Images/heartIcon'
 
-        {'hello' /* Insert Video Upload Date */}
-        {/* Insert Video Title */}
-      </div>
-    </header>
+const BannerComponent = () => {
+  return (
+    <div className='banner-style'>
+      <header className='style'>
+        <img
+          className='media-style'
+          src='http://placekitten.com/500/300'
+          alt='routine-media'
+        />
+        <div className='video-info'>
+          {/* commentIcon */}
+          {/* heartIcon */}
+          {/* Insert Video heart/comment icons*/}
+          {/* Insert Video Upload Date */}
+          {/* Insert Video Title */}
+        </div>
+      </header>
+    </div>
   )
 }
 
-export default RoutineBannerComponent
+export default BannerComponent

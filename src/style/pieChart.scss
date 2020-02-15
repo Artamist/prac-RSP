@@ -1,14 +1,14 @@
 circle {
   fill: #37474f;
-  stroke: #655;
-  stroke-width: 10;
-  stroke-dasharray: 20 10;
+  stroke: #4dd0e1;
+  stroke-width: 100;
+  stroke-dasharray: 40 180;
 }
 svg {
   transform: rotate(-90deg);
-  background: yellowgreen;
+  background: #90a4ae;
   border-radius: 50%;
 }
 .circle-graph {
-  padding: 20px;
+  padding: 40px;
 }

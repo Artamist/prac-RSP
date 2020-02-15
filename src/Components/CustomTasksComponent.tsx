@@ -24,6 +24,7 @@ function renderCustomTasksList(customTasks: CustomTasks[], currentRole: Roles) {
     return (
       <div className='custom-task-comp-style'>
         <header className='custom-task-header'>Edit Custom Tasks</header>
+        <hr className='line-header-style'></hr>
         <div className='custom-task-list-style'>
           <ul>
             <li>

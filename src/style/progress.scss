@@ -3,46 +3,52 @@
   flex-direction: row;
 }
 .course-completion-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
   background: #37474f;
   border-radius: 20px;
-  margin: 20px 20px 20px 150px;
-  width: 70%;
+  margin: 20px 20px 40px;
+  width: 700px;
 }
 .completion-style {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   padding: 10px;
+  justify-content: space-evenly;
 
   .completion-header {
     display: flex;
     flex-direction: row;
     color: white;
-    padding: 20px;
-    margin-left: 80px;
+    padding: 10px;
+    margin-left: 100px;
   }
 }
 .completion-button-box {
+  margin-top: 100px;
   margin-bottom: 100px;
+  .completion-button-style {
+    padding: 10px;
+  }
 }
 .percent-complete-header {
   color: white;
   display: flex;
   flex-direction: row-reverse;
+  align-content: center;
   padding: 20px;
-  margin-right: 80px;
+  margin-right: 40px;
 }
-.button-set,
-.button-style {
-  display: flex;
-  flex-direction: row-reverse;
-  padding: 10px;
-  margin-right: 120px;
+.button-micro-small {
+  background: white;
   border-radius: 10px;
+  width: 200px;
+  padding: 5px;
 }
 .breakdown-style {
   background: #37474f;
   border-radius: 10px;
-  margin-bottom: 100px;
 }
 .breakdown-tasks-header {
   color: white;
@@ -50,5 +56,18 @@
 }
 .breakdown-button-style {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.progress-buttons {
+  border-radius: 10px;
+  padding: 5px;
+  width: 300px;
+}
+.line-header-style {
+  border: 2px solid #00838f;
+  width: 300px;
+}
+.info-header {
+  color: white;
 }

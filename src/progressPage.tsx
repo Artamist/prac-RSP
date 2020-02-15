@@ -51,6 +51,7 @@ const ProgressPage: React.FC = () => {
       <CarouselBanner />
       <div className='progress-page-layout'>
         <div className='page-info-box'>
+          <header className='info-header'>Page Info Header</header>
           <p className='page-info'>
             This page displays your basic task info! Create and manage tasks
             here! This page displays your basic task info! Create and manage
@@ -61,11 +62,13 @@ const ProgressPage: React.FC = () => {
         <div className='task-container'>
           <div className='task-list-box'>
             <header className='whats-next-header'>What's Next Tasks</header>
+            <hr className='line-header-style'></hr>
             {/* What's Next Tasks */}
             <TaskComponent taskData={taskData} role={'user'} />
           </div>
           <div className='task-list-box'>
             <header className='tasks-header'>Tasks</header>
+            <hr className='line-header-style'></hr>
             {/* Tasks */}
             <TaskComponent taskData={taskData} role={'user'} />
           </div>

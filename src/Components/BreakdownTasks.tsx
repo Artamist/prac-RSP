@@ -3,17 +3,31 @@ import { FC } from 'react'
 
 import '../style/progress.scss'
 
-import ButtonSetComponent from './ButtonSet'
-import { Button } from '../button'
+import ProgressButtonsComponent from './ProgressButtons'
+import { ProgressButtons } from '../progressButtons'
 
 import { BreakdownTasks, Roles } from '../breakdownTasks'
 
-const buttonData: Button[] = [
+import TaskButtonsComponent from './TaskButtons'
+import { TaskButtons } from '../taskButtons'
+
+import PieChart from './PieChart'
+
+const progressButtonsData: ProgressButtons[] = [
   {
-    label: 'quizes',
+    label: 'Video',
     handler: () => console.log('Hello World'),
     roles: ['user', 'admin', 'teacher'],
     color: 'green'
+  }
+]
+const taskButtonsData: TaskButtons[] = [
+  {
+    url: 'www.google.com',
+    label: 'hello world',
+    handler: () => console.log('Hello World'),
+    roles: ['admin'],
+    color: 'primary'
   }
 ]
 
@@ -28,33 +42,65 @@ function renderBreakdownTasksSection(
 
     return (
       <div className='breakdown-style'>
-        <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js'></script>
-        <canvas id='doughnut-chart' width='800' height='450'></canvas>
-        {/* Ask about inserting chart add on for circle graph INSERT CIRCLE GRAPH HERE */}
+        <PieChart />
         <div className='breakdown-tasks-box'>
           <header className='breakdown-tasks-header'>
             {/* Insert percentage props*/}Breakdown Tasks
-            <hr className='line-style'></hr>
+            <hr className='line-header-style'></hr>
           </header>
           <div className='breakdown-button-style'>
-            <ButtonSetComponent buttonData={buttonData} role={'user'} />
-            <hr className='line-style'></hr>
+            <ProgressButtonsComponent
+              progressButtonsData={progressButtonsData}
+              role={'admin'}
+            />
+            <TaskButtonsComponent
+              taskButtonsData={taskButtonsData}
+              role={'admin'}
+            />
           </div>
-
+          <hr className='line-style'></hr>
           <div className='breakdown-button-style'>
-            <ButtonSetComponent buttonData={buttonData} role={'user'} />
-            <hr className='line-style'></hr>
+            <ProgressButtonsComponent
+              progressButtonsData={progressButtonsData}
+              role={'admin'}
+            />
+            <TaskButtonsComponent
+              taskButtonsData={taskButtonsData}
+              role={'admin'}
+            />
           </div>
+          <hr className='line-style'></hr>
           <div className='breakdown-button-style'>
-            <ButtonSetComponent buttonData={buttonData} role={'user'} />
-            <hr className='line-style'></hr>
+            <ProgressButtonsComponent
+              progressButtonsData={progressButtonsData}
+              role={'admin'}
+            />
+            <TaskButtonsComponent
+              taskButtonsData={taskButtonsData}
+              role={'admin'}
+            />
           </div>
+          <hr className='line-style'></hr>
           <div className='breakdown-button-style'>
-            <ButtonSetComponent buttonData={buttonData} role={'user'} />
-            <hr className='line-style'></hr>
+            <ProgressButtonsComponent
+              progressButtonsData={progressButtonsData}
+              role={'admin'}
+            />
+            <TaskButtonsComponent
+              taskButtonsData={taskButtonsData}
+              role={'admin'}
+            />
           </div>
+          <hr className='line-style'></hr>
           <div className='breakdown-button-style'>
-            <ButtonSetComponent buttonData={buttonData} role={'user'} />
+            <ProgressButtonsComponent
+              progressButtonsData={progressButtonsData}
+              role={'admin'}
+            />
+            <TaskButtonsComponent
+              taskButtonsData={taskButtonsData}
+              role={'admin'}
+            />
           </div>
         </div>
       </div>

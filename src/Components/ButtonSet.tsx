@@ -10,7 +10,7 @@ function renderButtonList(buttons: Button[], currentRole: Roles) {
     if (!roles.includes(currentRole)) return
 
     return (
-      <button onClick={handler} className={`button micro small ${color}`}>
+      <button onClick={handler} className={`button-micro-small ${color}`}>
         {label}
       </button>
     )
