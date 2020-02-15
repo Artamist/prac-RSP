@@ -8,6 +8,8 @@ import { Button } from '../button'
 
 import { CourseCompletion, Roles } from '../courseCompletion'
 
+import PieChart from './PieChart'
+
 const buttonData: Button[] = [
   {
     label: 'quizes',
@@ -28,6 +30,9 @@ function renderCourseCompletionSection(
 
     return (
       <div className='completion-style'>
+        <div>
+          <PieChart />
+        </div>
         <header className='completion-header'>Course Completion</header>
         {/* Ask about inserting chart add on for circle graph INSERT CIRCLE GRAPH HERE */}
         <div className='completion-button-box'>
