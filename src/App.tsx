@@ -4,15 +4,16 @@ import './style/App.scss'
 import './style/routines.scss'
 import './style/progress.scss'
 
-import RoutinesPage from './routinesPage'
-import ProgressPage from './progressPage'
+import RoutinesPage from './RoutinesPage'
+import ProgressPage from './ProgressPage'
+import LibraryPage from './LibraryPage'
 
 const App: React.FC = () => {
   return (
     <div className='App'>
       <RoutinesPage />
       <ProgressPage />
-      {/*<ButtonSet buttonData={buttonData} role={'user'} />*/}
+      <LibraryPage />
     </div>
   )
 }

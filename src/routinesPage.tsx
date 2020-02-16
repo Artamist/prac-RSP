@@ -10,9 +10,6 @@ import { Task } from './task'
 import CustomTasksComponent from './Components/CustomTasksComponent'
 import { CustomTasks } from './customTasks'
 
-import CourseCompletionComponent from './Components/CourseCompletionComponent'
-import { CourseCompletion } from './courseCompletion'
-
 // import nav
 // import search bar
 
@@ -30,14 +27,6 @@ const customTasksData: CustomTasks[] = [
     label: ['Finish Week 1 Intro'],
     roles: ['user'],
     completed: false
-  }
-]
-
-const courseCompletionData: CourseCompletion[] = [
-  {
-    label: ['video'],
-    roles: ['user', 'admin', 'teacher'],
-    completed: true
   }
 ]
 
@@ -71,6 +60,7 @@ const RoutinesPage: React.FC = () => {
         </div>
       </div>
       <div className='custom-tasks-box'>
+        <header className='library-tasks-header'>Edit Custom Tasks</header>
         <CustomTasksComponent customTasksData={customTasksData} role={'user'} />
         {/* Edit Custom Tasks */}
       </div>
