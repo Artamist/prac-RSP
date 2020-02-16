@@ -27,7 +27,7 @@
 }
 
 .task-button-style {
-  background: #37474f;
+  background: transparent;
   border-style: none;
 }
 
@@ -86,4 +86,33 @@ ul {
   margin-bottom: 20px;
   border-radius: 10px;
   padding: 7px;
+}
+.complete-task {
+  border-radius: 50%;
+  height: 30px;
+}
+.create-new-task-button {
+  margin-top: 30px;
+}
+.banner-style {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.video-info {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  bottom: 70px;
+  left: 800px;
+}
+.heart-icon {
+  margin-bottom: 14px;
+}
+.media-content-icons {
+  margin-left: -30px;
+}
+.banner-info-style {
+  margin-left: 150px;
+  margin-top: 40px;
 }

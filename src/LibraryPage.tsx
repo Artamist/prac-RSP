@@ -52,7 +52,6 @@ const LibraryPage: React.FC = () => {
           <div className='content-list-box'>
             <header className='library-tasks-header'>Course Tasks</header>
             <hr className='line-header-style'></hr>
-            {/* Library Course Tasks */}
             <CustomTasksComponent
               customTasksData={customTasksData}
               role={'admin'}

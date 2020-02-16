@@ -3,7 +3,7 @@
 import { createElement, FC } from 'react'
 import { TaskButtons, Roles } from '../taskButtons'
 
-// const checkmark = require('./Images/checkmark.svg'');
+import checkmark from '../Images/checkmark.svg'
 
 function renderTaskButtonsList(taskButtons: TaskButtons[], currentRole: Roles) {
   return taskButtons.map((taskButtons: TaskButtons) => {
@@ -30,7 +30,7 @@ function renderTaskButtonsList(taskButtons: TaskButtons[], currentRole: Roles) {
           </button>
           <button onClick={handler} className={`complete-task ${color}`}>
             <span className='complete-task-label'>
-              {/* checkmark */}
+              <img src={checkmark} alt='checkmark-icon'></img>
               {/*label*/}
             </span>
           </button>
