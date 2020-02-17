@@ -1,12 +1,8 @@
 export type Roles = 'guest' | 'user' | 'instructor' | 'admin'
 
-export type icon = 'video' | 'article' | 'quiz'
-
-export interface Task {
+export interface BreakdownTasks {
   url?: string
-  icon?: string
   label: string[]
   roles: Roles[]
   completed: boolean
 }
-// need help with how to input multiple icons

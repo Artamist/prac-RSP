@@ -1,4 +1,4 @@
-export type Roles = 'guest' | 'user' | 'instructor' | 'admin'
+export type Roles = 'guest' | 'user' | 'teacher' | 'admin'
 
 export type Colors = 'primary' | 'secondary' | 'red' | 'yellow' | 'green'
 

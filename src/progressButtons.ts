@@ -2,7 +2,8 @@ export type Roles = 'guest' | 'user' | 'teacher' | 'admin'
 
 export type Colors = 'primary' | 'secondary' | 'red' | 'yellow' | 'green'
 
-export interface Button {
+export interface ProgressButtons {
+  url?: string
   label: string
   handler: () => void
   roles: Roles[]

@@ -1,17 +1,23 @@
 /** @jsx createElement */
 
 import { createElement } from 'react'
+
 import './style/routines.scss'
+
 import CarouselBanner from './Components/CarouselBanner'
 
 import TaskComponent from './Components/TaskComponent'
 import { Task } from './task'
 
-import CustomTasksComponent from './Components/CustomTasksComponent'
-import { CustomTasks } from './customTasks'
+import CourseCompletionComponent from './Components/CourseCompletionComponent'
+import { CourseCompletion } from './courseCompletion'
+
+import BreakdownTasksComponent from './Components/BreakdownTasks'
+import { BreakdownTasks } from './breakdownTasks'
 
 // import nav
 // import search bar
+// hard wired components need to be seperated /header /TaskButtons
 
 const taskData: Task[] = [
   {
@@ -21,20 +27,29 @@ const taskData: Task[] = [
     completed: false
   }
 ]
-const customTasksData: CustomTasks[] = [
+
+const courseCompletionData: CourseCompletion[] = [
   {
-    url: 'http://www.google.com/',
-    label: ['Finish Week 1 Intro'],
-    roles: ['user'],
+    label: ['video'],
+    roles: ['user', 'admin', 'teacher'],
     completed: false
   }
 ]
 
-const RoutinesPage: React.FC = () => {
+const breakdownTasksData: BreakdownTasks[] = [
+  {
+    url: 'www/google.com',
+    label: ['hello'],
+    roles: ['admin'],
+    completed: false
+  }
+]
+
+const ProgressPage: React.FC = () => {
   return (
-    <div className='routines-page'>
+    <div className='progress-page'>
       <CarouselBanner />
-      <div className='routines-page-layout'>
+      <div className='progress-page-layout'>
         <div className='page-info-box'>
           <header className='info-header'>Page Info Header</header>
           <p className='page-info'>
@@ -59,12 +74,17 @@ const RoutinesPage: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className='custom-tasks-box'>
-        <header className='library-tasks-header'>Edit Custom Tasks</header>
-        <CustomTasksComponent customTasksData={customTasksData} role={'user'} />
-        {/* Edit Custom Tasks */}
+      <div className='course-completion-box'>
+        <CourseCompletionComponent
+          courseCompletionData={courseCompletionData}
+          role={'user'}
+        />
       </div>
+      <BreakdownTasksComponent
+        breakdownTasksData={breakdownTasksData}
+        role={'admin'}
+      />
     </div>
   )
 }
-export default RoutinesPage
+export default ProgressPage

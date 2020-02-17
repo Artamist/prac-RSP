@@ -23,7 +23,6 @@ function renderCustomTasksList(customTasks: CustomTasks[], currentRole: Roles) {
 
     return (
       <div className='custom-task-comp-style'>
-        <header className='custom-task-header'>Custom Tasks List</header>
         <div className='custom-task-list-style'>
           <ul>
             <li>
@@ -59,7 +58,7 @@ function renderCustomTasksList(customTasks: CustomTasks[], currentRole: Roles) {
             </li>
           </ul>
         </div>
-        <button className={'create-new-task'}>
+        <button className={'create-new-task-button'}>
           <span className='create-new-task-label'>Create New Task</span>
         </button>
       </div>
@@ -83,3 +82,4 @@ const CustomTasksComponent: FC<Props> = ({ customTasksData, role }) => {
 export default CustomTasksComponent
 
 // add onClick to all buttons
+// completed is for checkmark when task is completed
