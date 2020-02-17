@@ -2,7 +2,7 @@
 
 import React from 'react'
 import { Component } from 'react'
-import { Form } from './Form'
+import { Form, Toggle } from './Form'
 import { Field } from './Field'
 import { Task, Roles } from '../task'
 
@@ -27,11 +27,12 @@ function renderCreateTaskPopup(createTaskPopup: CreateTaskPopup[], currentRole: 
 
     return (
       <Form action="http://localhost:4351/api/contactus">
-        <div className="alert alert-info" role="alert">
+        <header className="alert alert-info" role="alert">
         Create Task
-        </div>
+        </header>
         <Field id="title" label="Title" />
         <Field id="task" label="Task" editor="multilinetextbox" />
+        <Toggle>
         <Field
           id="time"
           label="Time"
@@ -60,6 +61,7 @@ function renderCreateTaskPopup(createTaskPopup: CreateTaskPopup[], currentRole: 
           editor="dropdown"g
           options={["Select", "Daily", "Alternating days", "Weekly", "Bi-weekly", "Monthly"]}
         />
+        </Toggle>
         <div className='task-list-style'>
           <ul>
             <li>
