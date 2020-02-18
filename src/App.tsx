@@ -5,7 +5,7 @@ import './style/routines.scss'
 import './style/progress.scss'
 
 import RoutinesPage from './RoutinesPage'
-import ProgressPage from './ProgressPage'
+import ProgressPage from './progressPage'
 import LibraryPage from './LibraryPage'
 
 const App: React.FC = () => {

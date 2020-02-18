@@ -15,9 +15,11 @@ import { CourseCompletion } from './courseCompletion'
 import BreakdownTasksComponent from './Components/BreakdownTasks'
 import { BreakdownTasks } from './breakdownTasks'
 
+import CreateContentComponent from './Components/CreateContentComponent'
+import { CreateContent } from './createContent'
+
 // import nav
 // import search bar
-// hard wired components need to be seperated /header /TaskButtons
 
 const taskData: Task[] = [
   {
@@ -42,6 +44,14 @@ const breakdownTasksData: BreakdownTasks[] = [
     label: ['hello'],
     roles: ['admin'],
     completed: false
+  }
+]
+
+const createContentData: CreateContent[] = [
+  {
+    url: 'www.google.com',
+    label: ['Content'],
+    roles: ['admin']
   }
 ]
 
@@ -82,6 +92,10 @@ const ProgressPage: React.FC = () => {
       </div>
       <BreakdownTasksComponent
         breakdownTasksData={breakdownTasksData}
+        role={'admin'}
+      />
+      <CreateContentComponent
+        createContentData={createContentData}
         role={'admin'}
       />
     </div>

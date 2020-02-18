@@ -3,7 +3,25 @@
 import { createElement, FC } from 'react'
 import { CreateContent, Roles } from '../createContent'
 
-// const checkmark = require('./Images/checkmark.svg'');
+import { Field } from './Field'
+
+import ProgressButtonsComponent from './ProgressButtons'
+import { ProgressButtons } from '../progressButtons'
+
+import hamburger from '../Images/hamburger.svg'
+
+const progressButtonsData: ProgressButtons[] = [
+  {
+    url: 'www.google.com',
+    label: 'example membership',
+    handler: () => console.log('Hello Example'),
+    roles: ['admin'],
+    color: 'green'
+  }
+]
+function buttonFunction(ProgressButtonsComponent: any) {
+  ProgressButtonsComponent.style.backgroundColor = 'blue'
+}
 
 function renderCreateContent(
   createContent: CreateContent[],
@@ -14,7 +32,74 @@ function renderCreateContent(
 
     if (!roles.includes(currentRole)) return
 
-    return <div className='create-content-wrapper'></div>
+    return (
+      <div className='create-content-wrapper'>
+        <div className='create-content-header-wrapper'>
+          <header className='create-content-tasks-header'>
+            Create Content
+            <hr className='line-header-style'></hr>
+          </header>
+        </div>
+        <div></div>
+        <div className='create-form-title-wrapper'>
+          <form>
+            <label className='create-form-title-label'>Title</label>
+            <input type='text'></input>
+          </form>
+        </div>
+        <div className='create-form-description-wrapper'>
+          <label className='create-form-description-label'>Title</label>
+          <textarea></textarea>
+        </div>
+        {/* Props for categories insert in options section */}
+        {/* Insert Upload Content Section Here */}
+        <Field
+          id='Category'
+          label='Category'
+          editor='dropdown'
+          options={['Select', '12:00 AM', '01:00 AM']}
+        />
+        {/* Props for categories insert in options section */}
+        <div>
+          <header>Assign Membership Level</header>
+          <div>
+            <ProgressButtonsComponent
+              progressButtonsData={progressButtonsData}
+              role={'admin'}
+            />
+            <ProgressButtonsComponent
+              progressButtonsData={progressButtonsData}
+              role={'admin'}
+            />
+            <ProgressButtonsComponent
+              progressButtonsData={progressButtonsData}
+              role={'admin'}
+            />
+          </div>
+          <div className='content-order-wrapper'>
+            <header>Order of Content</header>
+            <div className='order-content-style'>
+              <ul>
+                <li>
+                  Content1{/* Props Data for content*/}
+                  <img src={hamburger} alt='drag hamburger icon'></img>
+                </li>
+              </ul>
+              <ul>
+                <li>Content1{/* Props Data for content*/}</li>
+                <img src={hamburger} alt='drag hamburger icon'></img>
+              </ul>
+              <ul>
+                <li>Content1{/* Props Data for content*/}</li>
+                <img src={hamburger} alt='drag hamburger icon'></img>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Insert Save Button Here */}
+      </div>
+    )
   })
 }
 
