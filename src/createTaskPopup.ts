@@ -4,5 +4,4 @@ export interface CreateTaskPopup {
   url?: string
   label: string[]
   roles: Roles[]
-  setReminder: boolean
 }

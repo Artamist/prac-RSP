@@ -1,11 +1,11 @@
-import React, { Component } from 'react'
+import React, { Component, FC } from 'react'
 
 interface IFormProps {
   /* The http path that the form will be posted to */
   action: string
 
   /* A prop which allows content to be injected */
-  render: () => React.ReactNode
+  render: () => React.ReactNode;
 }
 
 export interface IValues {
@@ -121,27 +121,6 @@ export class Form extends React.Component<IFormProps, IFormState> {
           )}
         </div>
       </form>
-    )
-  }
-}
-
-export default class Toggle extends Component {
-  state = {
-    on: false
-  }
-
-  toggle = () => {
-    this.setState({
-      on: !this.state.on
-    })
-  }
-
-  render() {
-    return (
-      <div>
-        {this.state.on && this.props.children}
-        <button onClick={this.toggle}>Show/Hide</button>
-      </div>
     )
   }
 }
