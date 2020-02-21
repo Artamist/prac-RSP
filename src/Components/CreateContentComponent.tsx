@@ -1,4 +1,5 @@
 /** @jsx createElement */
+import useCallback from 'react'
 
 import { createElement, FC } from 'react'
 import { CreateContent, Roles } from '../createContent'
@@ -19,9 +20,6 @@ const progressButtonsData: ProgressButtons[] = [
     color: 'green'
   }
 ]
-function buttonFunction(ProgressButtonsComponent: any) {
-  ProgressButtonsComponent.style.backgroundColor = 'blue'
-}
 
 function renderCreateContent(
   createContent: CreateContent[],
@@ -47,11 +45,10 @@ function renderCreateContent(
             <input type='text'></input>
           </form>
         </div>
-        <div className='create-form-description-wrapper'>
+        <div className='create-form-wrapper'>
           <label className='create-form-description-label'>Title</label>
           <textarea></textarea>
         </div>
-        {/* Props for categories insert in options section */}
         {/* Insert Upload Content Section Here */}
         <Field
           id='Category'
@@ -59,7 +56,7 @@ function renderCreateContent(
           editor='dropdown'
           options={['Select', '12:00 AM', '01:00 AM']}
         />
-        {/* Props for categories insert in options section */}
+        {/* Props for categories insert in options section above */}
         <div>
           <header>Assign Membership Level</header>
           <div>
@@ -78,26 +75,51 @@ function renderCreateContent(
           </div>
           <div className='content-order-wrapper'>
             <header>Order of Content</header>
-            <div className='order-content-style'>
-              <ul>
-                <li>
-                  Content1{/* Props Data for content*/}
-                  <img src={hamburger} alt='drag hamburger icon'></img>
+            <div className='order-content-wrapper'>
+              <ul className='order-list-style'>
+                <li className='content-style'>
+                  <label>
+                    Intro to Programming {/* Props Data for content title*/}
+                  </label>
+                  <img
+                    className='hamburger-icon-style'
+                    src={hamburger}
+                    alt='drag hamburger icon'
+                  ></img>
                 </li>
               </ul>
-              <ul>
-                <li>Content1{/* Props Data for content*/}</li>
-                <img src={hamburger} alt='drag hamburger icon'></img>
+              <hr className='line-header-order-style'></hr>
+              <ul className='order-list-style'>
+                <li className='content-style'>
+                  <label>
+                    JS Beginner's Guide {/* Props Data for content title*/}
+                  </label>
+                  <img
+                    className='hamburger-icon-style'
+                    src={hamburger}
+                    alt='drag hamburger icon'
+                  ></img>
+                </li>
               </ul>
-              <ul>
-                <li>Content1{/* Props Data for content*/}</li>
-                <img src={hamburger} alt='drag hamburger icon'></img>
+              <hr className='line-header-order-style'></hr>
+              <ul className='order-list-style'>
+                <li className='content-style'>
+                  <label>
+                    Advanced JS Guide {/* Props Data for content title*/}
+                  </label>
+                  {/* Props Data for content title*/}
+                  <img
+                    className='hamburger-icon-style'
+                    src={hamburger}
+                    alt='drag hamburger icon'
+                  ></img>
+                </li>
               </ul>
+              <hr className='line-header-order-style'></hr>
             </div>
           </div>
+          <button className='submit-button'>Save</button>
         </div>
-
-        {/* Insert Save Button Here */}
       </div>
     )
   })
