@@ -4,11 +4,15 @@ import { createElement } from 'react'
 import './style/routines.scss'
 import CarouselBanner from './Components/CarouselBanner'
 
+
 import TaskComponent from './Components/TaskComponent'
 import { Task } from './task'
 
 import CustomTasksComponent from './Components/CustomTasksComponent'
 import { CustomTasks } from './customTasks'
+
+import CreateTaskComponent from './Components/CreateContentComponent'
+import { CreateTaskPopup } from './createTaskPopup'
 
 // import nav
 // import search bar
@@ -27,6 +31,14 @@ const customTasksData: CustomTasks[] = [
     label: ['Finish Week 1 Intro'],
     roles: ['user'],
     completed: false
+  }
+]
+
+const createTaskPopup: CreateTaskPopup[] = [
+  {
+    url: 'http://www.google.com',
+    label: ['Run a Marathon in 3 Hours or Less'],
+    roles: ['user'],
   }
 ]
 
@@ -63,6 +75,10 @@ const RoutinesPage: React.FC = () => {
         <header className='library-tasks-header'>Edit Custom Tasks</header>
         <CustomTasksComponent customTasksData={customTasksData} role={'user'} />
         {/* Edit Custom Tasks */}
+      </div>
+      <div>
+        <header className='library-tasks-header'>Create Task Component</header>
+        <CreateTaskComponent createContentData={createTaskPopup} role={'user'} />
       </div>
     </div>
   )
