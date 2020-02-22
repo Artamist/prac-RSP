@@ -10,7 +10,7 @@ import { Task } from './task'
 import CustomTasksComponent from './Components/CustomTasksComponent'
 import { CustomTasks } from './customTasks'
 
-import CreateTaskComponent from './Components/CreateContentComponent'
+import CreateTaskComponent from './Components/CreateTaskComponent'
 import { CreateTaskPopup } from './createTaskPopup'
 
 // import nav
@@ -35,7 +35,7 @@ const customTasksData: CustomTasks[] = [
   }
 ]
 
-const createTaskPopup: CreateTaskPopup[] = [
+const createTaskPopupData: CreateTaskPopup[] = [
   {
     url: 'http://www.google.com',
     label: ['Run a Marathon in 3 Hours or Less'],
@@ -80,8 +80,8 @@ const RoutinesPage: React.FC = () => {
       <div>
         <header className='library-tasks-header'>Create Task Component</header>
         <CreateTaskComponent
-          createContentData={createTaskPopup}
-          role={'user'}
+          createTaskPopupData={createTaskPopup}
+          role={'admin'}
         />
       </div>
     </div>
