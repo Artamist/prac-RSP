@@ -5,5 +5,5 @@ export type Label = 'video' | 'quizes' | 'blogs'
 export interface CourseCompletion {
   label: Label[]
   roles: Roles[]
-  completed: boolean
+  checked: boolean
 }

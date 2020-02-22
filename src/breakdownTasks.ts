@@ -4,5 +4,5 @@ export interface BreakdownTasks {
   url?: string
   label: string[]
   roles: Roles[]
-  completed: boolean
+  checked: boolean
 }

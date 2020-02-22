@@ -28,7 +28,7 @@ const taskData: Task[] = [
     handler: () => handler,
     label: ['Finish Week 1 Intro'],
     roles: ['user'],
-    completed: false
+    checked: false
   }
 ]
 
@@ -36,7 +36,7 @@ const courseCompletionData: CourseCompletion[] = [
   {
     label: ['video'],
     roles: ['user', 'admin', 'teacher'],
-    completed: false
+    checked: false
   }
 ]
 
@@ -45,15 +45,7 @@ const breakdownTasksData: BreakdownTasks[] = [
     url: 'www/google.com',
     label: ['hello'],
     roles: ['admin'],
-    completed: false
-  }
-]
-
-const createContentData: CreateContent[] = [
-  {
-    url: 'www.google.com',
-    label: ['Content'],
-    roles: ['admin']
+    checked: false
   }
 ]
 
@@ -94,10 +86,6 @@ const ProgressPage: React.FC = () => {
       </div>
       <BreakdownTasksComponent
         breakdownTasksData={breakdownTasksData}
-        role={'admin'}
-      />
-      <CreateContentComponent
-        createContentData={createContentData}
         role={'admin'}
       />
     </div>

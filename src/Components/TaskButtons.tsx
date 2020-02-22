@@ -3,10 +3,11 @@ import { createElement, FC, useState } from 'react'
 import { TaskButtons, Roles } from '../taskButtons'
 
 import checkmark from '../Images/checkmark.svg'
+import { v4 } from 'uuid'
 
 function renderTaskButtonsList(taskButtons: TaskButtons[], currentRole: Roles) {
   return taskButtons.map((taskButtons: TaskButtons) => {
-    const { url, roles, handler, label, color } = taskButtons
+    const { key, url, roles, handler, label, color } = taskButtons
     /*
     const [taskValue, setTaskValue] = useState('')
     const [task, setTask] = useState([])
@@ -31,7 +32,7 @@ function renderTaskButtonsList(taskButtons: TaskButtons[], currentRole: Roles) {
 const handleChange = (e) => {
   setTaskValue(e.target.value);
 }
- */
+*/
     if (!roles.includes(currentRole)) return
 
     return (
@@ -46,23 +47,38 @@ const handleChange = (e) => {
 
       <div className='task-icons-wrapper'>
         <div className='task-icons'>
-          <button onClick={handler} className={`view-task ${color}`}>
+          <button
+            onClick={handler}
+            key='view-button'
+            className={`view-task ${color}`}
+          >
             <span className={`view-task-label ${color}`}>
-              <a href='https://www.google.com/'>View {/*label*/}</a>
+              <a href='https://www.google.com/'>{label}</a>
             </span>
           </button>
-          <button onClick={handler} className={`edit-task ${color}`}>
+          <button
+            onClick={handler}
+            key='edit-button'
+            className={`edit-task ${color}`}
+          >
             <span className='edit-task-label'>Edit {/*label*/}</span>
           </button>
-          <button onClick={handler} className={`delete-task ${color}`}>
+          <button
+            onClick={handler}
+            key={v4()}
+            className={`delete-task ${color}`}
+          >
             <span className='delete-task-label'>Delete {/*label*/}</span>
           </button>
-          <button onClick={handler} className={`complete-task ${color}`}>
-            <span className='complete-task-label'>
-              <img src={checkmark} alt='checkmark-icon'></img>
-              {/*label*/}
-            </span>
-          </button>
+          <div>
+            <input
+              type='checkbox'
+              className='hidden'
+              key='delete-button'
+              name='cb'
+            ></input>
+            <label key={v4()}>text</label>
+          </div>
         </div>
       </div>
     )

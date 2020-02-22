@@ -10,9 +10,6 @@ import { Task } from './task'
 import CustomTasksComponent from './Components/CustomTasksComponent'
 import { CustomTasks } from './customTasks'
 
-import CreateTaskComponent from './Components/CreateTaskComponent'
-import { CreateTaskPopup } from './createTaskPopup'
-
 // import nav
 // import search bar
 const handler = 'window.location.href = {url}'
@@ -23,7 +20,7 @@ const taskData: Task[] = [
     handler: () => handler,
     label: ['Finish Week 1 Intro'],
     roles: ['user'],
-    completed: false
+    checked: true
   }
 ]
 const customTasksData: CustomTasks[] = [
@@ -31,15 +28,7 @@ const customTasksData: CustomTasks[] = [
     url: 'http://www.google.com/',
     label: ['Finish Week 1 Intro'],
     roles: ['user'],
-    completed: false
-  }
-]
-
-const createTaskPopupData: CreateTaskPopup[] = [
-  {
-    url: 'http://www.google.com',
-    label: ['Run a Marathon in 3 Hours or Less'],
-    roles: ['user']
+    checked: false
   }
 ]
 
@@ -79,10 +68,6 @@ const RoutinesPage: React.FC = () => {
       </div>
       <div>
         <header className='library-tasks-header'>Create Task Component</header>
-        <CreateTaskComponent
-          createTaskPopupData={createTaskPopup}
-          role={'admin'}
-        />
       </div>
     </div>
   )

@@ -7,7 +7,8 @@ import { TaskButtons } from '../taskButtons'
 
 const taskButtonsData: TaskButtons[] = [
   {
-    label: 'Button1',
+    key: 'view-button', //WHAT IS THIS?!
+    label: 'View',
     handler: () => console.log('Hello World'),
     roles: ['user'],
     color: 'primary'
@@ -16,7 +17,7 @@ const taskButtonsData: TaskButtons[] = [
 
 function renderTaskList(task: Task[], currentRole: Roles) {
   return task.map((task: Task) => {
-    const { url, label, roles, completed } = task
+    const { url, label, roles, checked } = task
 
     if (!roles.includes(currentRole)) return
 

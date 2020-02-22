@@ -116,3 +116,17 @@ ul {
   margin-left: 150px;
   margin-top: 40px;
 }
+
+.hidden {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+}
+input[type='checkbox'] + label {
+  color: #ccc;
+  font-style: italic;
+}
+input[type='checkbox']:checked + label {
+  color: #f00;
+  font-style: normal;
+}

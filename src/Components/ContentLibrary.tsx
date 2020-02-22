@@ -18,7 +18,8 @@ import folder from '../Images/folder.svg'
 
 const taskButtonsData: TaskButtons[] = [
   {
-    label: 'Button1',
+    key: 'view-button', //What is this?!
+    label: 'View',
     handler: () => console.log('Hello World'),
     roles: ['admin'],
     color: 'primary'
@@ -32,7 +33,7 @@ const taskData: Task[] = [
     handler: () => handler,
     label: ['Finish Week 1 Intro'],
     roles: ['admin'],
-    completed: false
+    checked: false
   }
 ]
 

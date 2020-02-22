@@ -24,7 +24,7 @@ function renderCourseCompletionSection(
   currentRole: Roles
 ) {
   return courseCompletion.map((courseCompletion: CourseCompletion) => {
-    const { label, roles, completed } = courseCompletion
+    const { label, roles, checked } = courseCompletion
 
     if (!roles.includes(currentRole)) return
 

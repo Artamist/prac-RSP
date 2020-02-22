@@ -5,10 +5,12 @@ import { Task, Roles } from '../task'
 import TaskButtonsComponent from './TaskButtons'
 import { TaskButtons } from '../taskButtons'
 import { CustomTasks } from '../customTasks'
+import { v4 } from 'uuid'
 
 const taskButtonsData: TaskButtons[] = [
   {
-    label: 'Button1',
+    key: 'view-button',
+    label: 'View',
     handler: () => console.log('Hello World'),
     roles: ['user'],
     color: 'primary'
@@ -17,7 +19,7 @@ const taskButtonsData: TaskButtons[] = [
 
 function renderCustomTasksList(customTasks: CustomTasks[], currentRole: Roles) {
   return customTasks.map((customTasks: CustomTasks) => {
-    const { url, label, roles, completed } = customTasks
+    const { url, label, roles, checked } = customTasks
 
     if (!roles.includes(currentRole)) return
 
@@ -82,4 +84,3 @@ const CustomTasksComponent: FC<Props> = ({ customTasksData, role }) => {
 export default CustomTasksComponent
 
 // add onClick to all buttons
-// completed is for checkmark when task is completed

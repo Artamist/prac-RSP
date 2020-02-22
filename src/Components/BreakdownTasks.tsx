@@ -1,5 +1,6 @@
 import React from 'react'
 import { FC } from 'react'
+import { v4 } from 'uuid'
 
 import '../style/progress.scss'
 
@@ -23,8 +24,9 @@ const progressButtonsData: ProgressButtons[] = [
 ]
 const taskButtonsData: TaskButtons[] = [
   {
+    key: 'view-button',
     url: 'www.google.com',
-    label: 'hello world',
+    label: 'View',
     handler: () => console.log('Hello World'),
     roles: ['admin'],
     color: 'primary'
@@ -36,7 +38,7 @@ function renderBreakdownTasksSection(
   currentRole: Roles
 ) {
   return breakdownTasks.map((breakdownTasks: BreakdownTasks) => {
-    const { label, roles, completed } = breakdownTasks
+    const { label, roles, checked } = breakdownTasks
 
     if (!roles.includes(currentRole)) return
 
