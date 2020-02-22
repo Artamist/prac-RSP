@@ -4,7 +4,6 @@ import { createElement } from 'react'
 import './style/routines.scss'
 import CarouselBanner from './Components/CarouselBanner'
 
-
 import TaskComponent from './Components/TaskComponent'
 import { Task } from './task'
 
@@ -16,10 +15,12 @@ import { CreateTaskPopup } from './createTaskPopup'
 
 // import nav
 // import search bar
-
+const handler = 'window.location.href = {url}'
+//change url in data below for view to assign proper desination with {url}
 const taskData: Task[] = [
   {
-    url: 'http://www.google.com/',
+    url: 'www.youtube.com',
+    handler: () => handler,
     label: ['Finish Week 1 Intro'],
     roles: ['user'],
     completed: false
@@ -38,7 +39,7 @@ const createTaskPopup: CreateTaskPopup[] = [
   {
     url: 'http://www.google.com',
     label: ['Run a Marathon in 3 Hours or Less'],
-    roles: ['user'],
+    roles: ['user']
   }
 ]
 
@@ -78,7 +79,10 @@ const RoutinesPage: React.FC = () => {
       </div>
       <div>
         <header className='library-tasks-header'>Create Task Component</header>
-        <CreateTaskComponent createContentData={createTaskPopup} role={'user'} />
+        <CreateTaskComponent
+          createContentData={createTaskPopup}
+          role={'user'}
+        />
       </div>
     </div>
   )

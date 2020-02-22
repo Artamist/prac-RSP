@@ -24,10 +24,12 @@ const taskButtonsData: TaskButtons[] = [
     color: 'primary'
   }
 ]
-
+const handler = 'window.location.href = {url}'
+//change url in data below for view to assign proper desination with {url}
 const taskData: Task[] = [
   {
     url: 'http://www.google.com/',
+    handler: () => handler,
     label: ['Finish Week 1 Intro'],
     roles: ['admin'],
     completed: false

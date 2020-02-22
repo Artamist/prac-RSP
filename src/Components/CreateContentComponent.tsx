@@ -1,5 +1,4 @@
 /** @jsx createElement */
-import useCallback from 'react'
 
 import { createElement, FC } from 'react'
 import { CreateContent, Roles } from '../createContent'
@@ -118,7 +117,13 @@ function renderCreateContent(
               <hr className='line-header-order-style'></hr>
             </div>
           </div>
-          <button className='submit-button'>Save</button>
+          <form id='form'>
+            <br></br>
+            <button className='submit-button' type='submit'>
+              Submit form
+            </button>
+            <p id='log'></p>
+          </form>
         </div>
       </div>
     )
