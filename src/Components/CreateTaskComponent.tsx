@@ -21,9 +21,7 @@ export const CreateTaskComponent: React.SFC = () => {
   return (
     <div className='create-task-wrapper'>
       <Form
-        action='http://localhost:4351/api/contactus'
-        render={() => (
-          <React.Fragment>
+        action='http://localhost:4351/api/contactus'>
             <header className='alert alert-info' role='alert'>
               Create Custom Task
             </header>
@@ -114,9 +112,7 @@ export const CreateTaskComponent: React.SFC = () => {
                 ]}
               />
             </Toggle>
-          </React.Fragment>
-        )}
-      />
+      </Form>
     </div>
   )
 }
