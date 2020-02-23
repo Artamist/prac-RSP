@@ -24,7 +24,7 @@ const progressButtonsData: ProgressButtons[] = [
 ]
 const taskButtonsData: TaskButtons[] = [
   {
-    key: 'view-button',
+    id: 'view-button',
     url: 'www.google.com',
     label: 'View',
     handler: () => console.log('Hello World'),
@@ -44,7 +44,9 @@ function renderBreakdownTasksSection(
 
     return (
       <div className='breakdown-style'>
-        <PieChart />
+        <div className='progress-pie-style'>
+          <PieChart />
+        </div>
         <div className='breakdown-tasks-box'>
           <header className='breakdown-tasks-header'>
             {/* Insert percentage props*/}Breakdown Tasks

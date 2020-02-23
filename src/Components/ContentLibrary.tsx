@@ -18,7 +18,7 @@ import folder from '../Images/folder.svg'
 
 const taskButtonsData: TaskButtons[] = [
   {
-    key: 'view-button', //What is this?!
+    id: 'view-button', //What is this?!
     label: 'View',
     handler: () => console.log('Hello World'),
     roles: ['admin'],

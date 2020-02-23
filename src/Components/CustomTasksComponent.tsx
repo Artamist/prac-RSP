@@ -9,7 +9,7 @@ import { v4 } from 'uuid'
 
 const taskButtonsData: TaskButtons[] = [
   {
-    key: 'view-button',
+    id: 'view-button',
     label: 'View',
     handler: () => console.log('Hello World'),
     roles: ['user'],

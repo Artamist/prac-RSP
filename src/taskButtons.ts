@@ -13,7 +13,7 @@ export type Key =
 export type Label = 'View' | 'Edit' | 'Delete' | 'Checkmark'
 
 export interface TaskButtons {
-  key: Key
+  id: Key
   url?: string
   label: Label
   handler: () => void

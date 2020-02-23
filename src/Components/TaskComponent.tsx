@@ -7,7 +7,7 @@ import { TaskButtons } from '../taskButtons'
 
 const taskButtonsData: TaskButtons[] = [
   {
-    key: 'view-button', //WHAT IS THIS?!
+    id: 'view-button', //WHAT IS THIS?!
     label: 'View',
     handler: () => console.log('Hello World'),
     roles: ['user'],
