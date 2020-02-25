@@ -1,6 +1,8 @@
 import React from 'react'
 import { FC } from 'react'
 
+import { v4 } from 'uuid'
+
 import '../style/progress.scss'
 
 import ButtonSetComponent from './ButtonSet'
@@ -29,7 +31,7 @@ function renderCourseCompletionSection(
     if (!roles.includes(currentRole)) return
 
     return (
-      <div className='completion-style'>
+      <div key={v4()} className='completion-style'>
         <div>
           <header className='completion-header'>Course Completion</header>
           <PieChart />

@@ -1,5 +1,7 @@
 /** @jsx createElement */
 
+import { v4 } from 'uuid'
+
 import { createElement, FC } from 'react'
 import { ProgressButtons, Roles } from '../progressButtons'
 
@@ -13,9 +15,11 @@ function renderProgressButtonsList(
     if (!roles.includes(currentRole)) return
 
     return (
-      <button onClick={handler} className={`progress-buttons ${color}`}>
-        {label}
-      </button>
+      <div key={v4()}>
+        <button onClick={handler} className={`progress-buttons ${color}`}>
+          {label}
+        </button>
+      </div>
     )
   })
 }

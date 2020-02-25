@@ -1,5 +1,7 @@
 /** @jsx createElement */
 
+import { v4 } from 'uuid'
+
 import { createElement, FC } from 'react'
 import { CreateContent, Roles } from '../createContent'
 
@@ -30,7 +32,7 @@ function renderCreateContent(
     if (!roles.includes(currentRole)) return
 
     return (
-      <div className='create-content-wrapper'>
+      <div key={v4()} className='create-content-wrapper'>
         <div className='create-content-header-wrapper'>
           <header className='create-content-tasks-header'>
             Create Content
@@ -137,9 +139,9 @@ interface Props {
 
 const CreateContentComponent: FC<Props> = ({ createContentData, role }) => {
   return (
-    <button className='task-button-set task-button-style'>
+    <div className='task-button-set task-button-style'>
       {renderCreateContent(createContentData, role)}
-    </button>
+    </div>
   )
 }
 

@@ -45,7 +45,7 @@ const breakdownTasksData: BreakdownTasks[] = [
     url: 'www/google.com',
     label: ['hello'],
     roles: ['admin'],
-    checked: false
+    completed: true
   }
 ]
 

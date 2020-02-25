@@ -9,11 +9,11 @@ import { v4 } from 'uuid'
 
 const taskButtonsData: TaskButtons[] = [
   {
-    id: 'view-button',
     label: 'View',
     handler: () => console.log('Hello World'),
     roles: ['user'],
-    color: 'primary'
+    color: 'primary',
+    completed: true
   }
 ]
 
@@ -24,7 +24,7 @@ function renderCustomTasksList(customTasks: CustomTasks[], currentRole: Roles) {
     if (!roles.includes(currentRole)) return
 
     return (
-      <div className='custom-task-comp-style'>
+      <div key={v4()} className='custom-task-comp-style'>
         <div className='custom-task-list-style'>
           <ul>
             <li>

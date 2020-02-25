@@ -1,43 +1,42 @@
 /** @jsx createElement */
-import { createElement, FC, useState } from 'react'
+import { createElement, FC } from 'react'
 import { TaskButtons, Roles } from '../taskButtons'
 
-import checkmark from '../Images/checkmark.svg'
 import { v4 } from 'uuid'
+
+import checkmark from '../Images/checkmark.svg'
+
+//Outputs something to show it works, need to be updated using routes
+const viewButtonClickHandler = () => console.log('view button clicked')
 
 function renderTaskButtonsList(taskButtons: TaskButtons[], currentRole: Roles) {
   return taskButtons.map((taskButtons: TaskButtons) => {
-    const { id, url, roles, handler, label, color } = taskButtons
+    const { url, roles, handler, label, color, completed } = taskButtons
 
     if (!roles.includes(currentRole)) return
 
     return (
-      <div className='task-icons-wrapper'>
+      <div key={v4()} className='task-icons-wrapper'>
         <div className='task-icons'>
-          <button onClick={handler} id={id} className={`view-task ${color}`}>
+          <button
+            onClick={viewButtonClickHandler}
+            className={`view-task ${color}`}
+          >
             <span className={`view-task-label ${color}`}>
               <a href='https://www.google.com/'>{label}</a>
             </span>
           </button>
-          <button onClick={handler} id={v4()} className={`edit-task ${color}`}>
+          <button onClick={handler} className={`edit-task ${color}`}>
             <span className='edit-task-label'>Edit {/*label*/}</span>
           </button>
-          <button
-            onClick={handler}
-            id={v4()}
-            className={`delete-task ${color}`}
-          >
+          <button onClick={handler} className={`delete-task ${color}`}>
             <span className='delete-task-label'>Delete {/*label*/}</span>
           </button>
-          <div>
-            <input
-              type='checkbox'
-              className='hidden'
-              id='delete-button'
-              name='cb'
-            ></input>
-            <label id={id}>text</label>
-          </div>
+          {completed && (
+            <button className={`complete-task ${color}`}>
+              <img src={checkmark} className='complete-task-image' />
+            </button>
+          )}
         </div>
       </div>
     )
@@ -51,9 +50,9 @@ interface Props {
 
 const TaskButtonsComponent: FC<Props> = ({ taskButtonsData, role }) => {
   return (
-    <button className='task-button-set task-button-style'>
+    <div className='task-button-set task-button-style'>
       {renderTaskButtonsList(taskButtonsData, role)}
-    </button>
+    </div>
   )
 }
 
