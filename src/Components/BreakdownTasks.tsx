@@ -1,6 +1,8 @@
 import React from 'react'
 import { FC } from 'react'
 
+import { v4 } from 'uuid'
+
 import '../style/progress.scss'
 
 import ProgressButtonsComponent from './ProgressButtons'
@@ -24,10 +26,11 @@ const progressButtonsData: ProgressButtons[] = [
 const taskButtonsData: TaskButtons[] = [
   {
     url: 'www.google.com',
-    label: 'hello world',
+    label: 'View',
     handler: () => console.log('Hello World'),
     roles: ['admin'],
-    color: 'primary'
+    color: 'primary',
+    completed: true
   }
 ]
 
@@ -41,8 +44,10 @@ function renderBreakdownTasksSection(
     if (!roles.includes(currentRole)) return
 
     return (
-      <div className='breakdown-style'>
-        <PieChart />
+      <div key={v4()} className='breakdown-style'>
+        <div className='progress-pie-style'>
+          <PieChart />
+        </div>
         <div className='breakdown-tasks-box'>
           <header className='breakdown-tasks-header'>
             {/* Insert percentage props*/}Breakdown Tasks

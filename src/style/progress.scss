@@ -2,6 +2,13 @@
   display: flex;
   flex-direction: row;
 }
+.info-header {
+  color: white;
+}
+.line-header-style {
+  border: 2px solid #00838f;
+  width: 300px;
+}
 .course-completion-box {
   display: flex;
   flex-direction: row;
@@ -67,10 +74,7 @@
   padding: 5px;
   width: 300px;
 }
-.line-header-style {
-  border: 2px solid #00838f;
-  width: 300px;
-}
-.info-header {
-  color: white;
+
+.progress-pie-style {
+  padding: 20px;
 }

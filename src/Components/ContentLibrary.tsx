@@ -2,6 +2,8 @@
 
 import { createElement, FC } from 'react'
 
+import { v4 } from 'uuid'
+
 import '../style/library.scss'
 
 import { TaskButtons, Roles } from '../taskButtons'
@@ -18,19 +20,22 @@ import folder from '../Images/folder.svg'
 
 const taskButtonsData: TaskButtons[] = [
   {
-    label: 'Button1',
+    label: 'View',
     handler: () => console.log('Hello World'),
     roles: ['admin'],
-    color: 'primary'
+    color: 'primary',
+    completed: true
   }
 ]
-
+const handler = 'window.location.href = {url}'
+//change url in data below for view to assign proper desination with {url}
 const taskData: Task[] = [
   {
     url: 'http://www.google.com/',
+    handler: () => handler,
     label: ['Finish Week 1 Intro'],
     roles: ['admin'],
-    completed: false
+    checked: false
   }
 ]
 
@@ -44,7 +49,7 @@ function renderContentLibrary(
     if (!roles.includes('admin')) return
 
     return (
-      <div className='content-library-styles'>
+      <div key={v4()} className='content-library-styles'>
         <div className='header-style'>
           <header className='content-header'>Your Content Library</header>
           <hr className='line-header-style'></hr>

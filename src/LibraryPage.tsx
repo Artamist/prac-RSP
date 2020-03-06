@@ -10,21 +10,34 @@ import { CustomTasks } from './customTasks'
 import ContentLibraryComponent from './Components/ContentLibrary'
 import { ContentLibrary } from './contentLibrary'
 
+import CreateContentComponent from './Components/CreateContentComponent'
+import { CreateContent } from './createContent'
+
+// All pages
+// import nav
+// import search bar
+
 const contentLibraryData: ContentLibrary[] = [
   {
     label: ['foldername'],
     roles: ['admin']
   }
 ]
-// import nav
-// import search bar
+
+const createContentData: CreateContent[] = [
+  {
+    url: 'www.google.com',
+    label: ['Content'],
+    roles: ['admin']
+  }
+]
 
 const customTasksData: CustomTasks[] = [
   {
     url: 'www.google.com',
     label: ['TS Intro'],
     roles: ['admin'],
-    completed: false
+    checked: false
   }
 ]
 
@@ -58,6 +71,10 @@ const LibraryPage: React.FC = () => {
             />
           </div>
         </div>
+        <CreateContentComponent
+          createContentData={createContentData}
+          role={'admin'}
+        />
       </div>
     </div>
   )

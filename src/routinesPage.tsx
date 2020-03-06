@@ -12,13 +12,15 @@ import { CustomTasks } from './customTasks'
 
 // import nav
 // import search bar
-
+const handler = 'window.location.href = {url}'
+//change url in data below for view to assign proper desination with {url}
 const taskData: Task[] = [
   {
-    url: 'http://www.google.com/',
+    url: 'www.youtube.com',
+    handler: () => handler,
     label: ['Finish Week 1 Intro'],
     roles: ['user'],
-    completed: false
+    checked: true
   }
 ]
 const customTasksData: CustomTasks[] = [
@@ -26,7 +28,7 @@ const customTasksData: CustomTasks[] = [
     url: 'http://www.google.com/',
     label: ['Finish Week 1 Intro'],
     roles: ['user'],
-    completed: false
+    checked: false
   }
 ]
 
@@ -63,6 +65,9 @@ const RoutinesPage: React.FC = () => {
         <header className='library-tasks-header'>Edit Custom Tasks</header>
         <CustomTasksComponent customTasksData={customTasksData} role={'user'} />
         {/* Edit Custom Tasks */}
+      </div>
+      <div>
+        <header className='library-tasks-header'>Create Task Component</header>
       </div>
     </div>
   )

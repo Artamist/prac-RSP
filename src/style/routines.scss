@@ -1,20 +1,16 @@
+.routines-page-layout {
+  display: flex;
+  flex-direction: row;
+}
+//Carousel Banner
 .banner-style {
   background: #37474f;
   height: 400px;
   width: 100%;
 }
+//Carousel Banner
 .media-style {
   margin-top: 20px;
-}
-
-.routines-page-layout {
-  display: flex;
-  flex-direction: row;
-}
-
-.page-info {
-  color: white;
-  padding: 40px;
 }
 
 .page-info-box {
@@ -24,6 +20,11 @@
   margin-top: 20px;
   margin-right: 20px;
   width: 60%;
+}
+
+.page-info {
+  color: white;
+  padding: 40px;
 }
 
 .task-button-style {
@@ -58,13 +59,12 @@
   .task-list-style {
     color: white;
   }
+  .whats-next-header,
+  .tasks-header {
+    padding: 5px;
+    color: white;
+  }
 }
-.whats-next-header,
-.tasks-header {
-  padding: 5px;
-  color: white;
-}
-
 .line-style {
   border: 1px solid #00838f;
   width: 80%;
@@ -115,4 +115,18 @@ ul {
 .banner-info-style {
   margin-left: 150px;
   margin-top: 40px;
+}
+
+.hidden {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+}
+input[type='checkbox'] + label {
+  color: #ccc;
+  font-style: italic;
+}
+input[type='checkbox']:checked + label {
+  color: #f00;
+  font-style: normal;
 }

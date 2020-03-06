@@ -5,23 +5,26 @@ import { Task, Roles } from '../task'
 import TaskButtonsComponent from './TaskButtons'
 import { TaskButtons } from '../taskButtons'
 
+import { v4 } from 'uuid'
+
 const taskButtonsData: TaskButtons[] = [
   {
-    label: 'Button1',
+    label: 'View',
     handler: () => console.log('Hello World'),
     roles: ['user'],
-    color: 'primary'
+    color: 'primary',
+    completed: true
   }
 ]
 
 function renderTaskList(task: Task[], currentRole: Roles) {
   return task.map((task: Task) => {
-    const { url, label, roles, completed } = task
+    const { url, label, roles, checked } = task
 
     if (!roles.includes(currentRole)) return
 
     return (
-      <div className='task-comp-style'>
+      <div key={v4()} className='task-comp-style'>
         <div className='task-list-style'>
           <ul>
             <li>
@@ -73,4 +76,4 @@ const TaskComponent: FC<Props> = ({ taskData, role }) => {
 
 export default TaskComponent
 
-// add onClick to all buttons
+// add onClick to delete and edit buttons

@@ -1,44 +1,44 @@
-import React, { Component } from 'react'
+import React, { Component, FC } from 'react'
 
 interface IFormProps {
   /* The http path that the form will be posted to */
-  action: string;
+  action: string
 
   /* A prop which allows content to be injected */
-  render: () => React.ReactNode;
+  render: () => React.ReactNode
 }
 
 export interface IValues {
   /* Key value pairs for all the field values with key being the field name */
-  [key: string]: any;
+  [key: string]: any
 }
 
 export interface IErrors {
   /* The validation error messages for each field (key is the field name */
-  [key: string]: string;
+  [key: string]: string
 }
 
 export interface IFormState {
   /* The field values */
-  values: IValues;
+  values: IValues
 
   /* The field validation error messages */
-  errors: IErrors;
+  errors: IErrors
 
   /* Whether the form has been successfully submitted */
-  submitSuccess?: boolean;
+  submitSuccess?: boolean
 }
 
 export class Form extends React.Component<IFormProps, IFormState> {
   constructor(props: IFormProps) {
-    super(props);
+    super(props)
 
-    const errors: IErrors = {};
-    const values: IValues = {};
+    const errors: IErrors = {}
+    const values: IValues = {}
     this.state = {
       errors,
       values
-    };
+    }
   }
 
   /**
@@ -46,13 +46,13 @@ export class Form extends React.Component<IFormProps, IFormState> {
    * @param {IErrors} errors - The field errors
    */
   private haveErrors(errors: IErrors) {
-    let haveError: boolean = false;
+    let haveError: boolean = false
     Object.keys(errors).map((key: string) => {
       if (errors[key].length > 0) {
-        haveError = true;
+        haveError = true
       }
-    });
-    return haveError;
+    })
+    return haveError
   }
 
   /**
@@ -62,13 +62,13 @@ export class Form extends React.Component<IFormProps, IFormState> {
   private handleSubmit = async (
     e: React.FormEvent<HTMLFormElement>
   ): Promise<void> => {
-    e.preventDefault();
+    e.preventDefault()
 
     if (this.validateForm()) {
-      const submitSuccess: boolean = await this.submitForm();
-      this.setState({ submitSuccess });
+      const submitSuccess: boolean = await this.submitForm()
+      this.setState({ submitSuccess })
     }
-  };
+  }
 
   /**
    * Executes the validation rules for all the fields on the form and sets the error state
@@ -76,7 +76,7 @@ export class Form extends React.Component<IFormProps, IFormState> {
    */
   private validateForm(): boolean {
     // TODO - validate form
-    return true;
+    return true
   }
 
   /**
@@ -85,66 +85,42 @@ export class Form extends React.Component<IFormProps, IFormState> {
    */
   private async submitForm(): Promise<boolean> {
     // TODO - submit the form
-    return true;
+    return true
   }
 
   public render() {
-    const { submitSuccess, errors } = this.state;
+    const { submitSuccess, errors } = this.state
     return (
       <form onSubmit={this.handleSubmit} noValidate={true}>
-        <div className="container">
-          
-          {this.props.render()}          
-          
-          <div className="form-group">
+        <div className='container'>
+          {this.props.render()}
+
+          <div className='form-group'>
             <button
-              type="submit"
-              className="btn btn-primary"
+              type='submit'
+              className='btn btn-primary'
               disabled={this.haveErrors(errors)}
             >
               Create New Task
             </button>
           </div>
           {submitSuccess && (
-            <div className="alert alert-info" role="alert">
+            <div className='alert alert-info' role='alert'>
               Your task was successfully created!
             </div>
           )}
-          {submitSuccess === false &&
-            !this.haveErrors(errors) && (
-              <div className="alert alert-danger" role="alert">
-                Sorry, an unexpected error has occurred
-              </div>
-            )}
-          {submitSuccess === false &&
-            this.haveErrors(errors) && (
-              <div className="alert alert-danger" role="alert">
-                Sorry, the form is invalid. Please review, adjust and try again
-              </div>
-            )}
+          {submitSuccess === false && !this.haveErrors(errors) && (
+            <div className='alert alert-danger' role='alert'>
+              Sorry, an unexpected error has occurred
+            </div>
+          )}
+          {submitSuccess === false && this.haveErrors(errors) && (
+            <div className='alert alert-danger' role='alert'>
+              Sorry, the form is invalid. Please review, adjust and try again
+            </div>
+          )}
         </div>
       </form>
-    );
-  }
-}
-
-export default class Toggle extends Component {
-  state = {
-    on: false,
-  }
-
-  toggle = () => {
-    this.setState({
-      on: !this.state.on
-    })
-  }
-
-  render() {
-    return (
-      <div>
-        {this.state.on && this.props.children}
-        <button onClick={this.toggle}>Show/Hide</button>
-      </div>
     )
   }
 }

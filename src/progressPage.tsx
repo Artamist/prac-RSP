@@ -15,16 +15,18 @@ import { CourseCompletion } from './courseCompletion'
 import BreakdownTasksComponent from './Components/BreakdownTasks'
 import { BreakdownTasks } from './breakdownTasks'
 
-// import nav
-// import search bar
-// hard wired components need to be seperated /header /TaskButtons
+import CreateContentComponent from './Components/CreateContentComponent'
+import { CreateContent } from './createContent'
 
+const handler = 'window.location.href = {url}'
+//change url in data below for view to assign proper desination with {url}
 const taskData: Task[] = [
   {
     url: 'http://www.google.com/',
+    handler: () => handler,
     label: ['Finish Week 1 Intro'],
     roles: ['user'],
-    completed: false
+    checked: false
   }
 ]
 
@@ -32,7 +34,7 @@ const courseCompletionData: CourseCompletion[] = [
   {
     label: ['video'],
     roles: ['user', 'admin', 'teacher'],
-    completed: false
+    checked: false
   }
 ]
 
@@ -41,7 +43,7 @@ const breakdownTasksData: BreakdownTasks[] = [
     url: 'www/google.com',
     label: ['hello'],
     roles: ['admin'],
-    completed: false
+    completed: true
   }
 ]
 
