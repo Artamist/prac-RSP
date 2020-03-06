@@ -17,5 +17,3 @@ const PieChart = () => {
 }
 
 export default PieChart
-
-// if (!roles.includes(currentRole)) return

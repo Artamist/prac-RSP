@@ -12,4 +12,3 @@ export interface Task {
   roles: Roles[]
   checked: boolean
 }
-// need help with how to input multiple icons

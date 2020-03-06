@@ -18,8 +18,6 @@ import { BreakdownTasks } from './breakdownTasks'
 import CreateContentComponent from './Components/CreateContentComponent'
 import { CreateContent } from './createContent'
 
-// import nav
-// import search bar
 const handler = 'window.location.href = {url}'
 //change url in data below for view to assign proper desination with {url}
 const taskData: Task[] = [

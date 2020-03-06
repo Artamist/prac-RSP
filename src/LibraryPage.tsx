@@ -13,6 +13,10 @@ import { ContentLibrary } from './contentLibrary'
 import CreateContentComponent from './Components/CreateContentComponent'
 import { CreateContent } from './createContent'
 
+// All pages
+// import nav
+// import search bar
+
 const contentLibraryData: ContentLibrary[] = [
   {
     label: ['foldername'],
@@ -27,9 +31,6 @@ const createContentData: CreateContent[] = [
     roles: ['admin']
   }
 ]
-// All pages
-// import nav
-// import search bar
 
 const customTasksData: CustomTasks[] = [
   {
